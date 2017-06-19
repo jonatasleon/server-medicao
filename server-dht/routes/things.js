@@ -3,6 +3,7 @@ var router = express.Router();
 
 var thingsCtrl = require('../controllers/things');
 
-router.post('/dht', thingsCtrl.dht);
+router.get('/dht', thingsCtrl.getAll);
+router.post('/dht', thingsCtrl.create);
 
 module.exports = router;

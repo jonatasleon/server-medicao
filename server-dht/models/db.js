@@ -29,14 +29,6 @@ const loadModels = (sequelize) => {
   return models;
 };
 
-let database = {
-    sequelize,
-    Sequelize,
-    models: {},
-}
-
-database.models = loadModels(sequelize);
-
 sequelize.sync()
 
 sequelize

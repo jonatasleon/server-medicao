@@ -2,15 +2,11 @@ const {sequelize, Sequelize} = require('./db');
 
 module.exports = sequelize.define('leitura', {
   temperatura: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.FLOAT,
     allowNull: false
   },
   umidade: {
     type: Sequelize.INTEGER,
     allowNull: false
-  },
-  criadoEm: {
-    type: Sequelize.DATE,
-    default: Sequelize.NOW
   }
 })

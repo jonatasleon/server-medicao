@@ -2,11 +2,13 @@ const Leitura = require('../models/Leitura');
 
 module.exports = {
   create: (req, res, next) => {
-    const body = req.body;
+    const body = req.body
+
+    console.log(req.body);
 
     const leitura = {
-      temperatura: body.humidity,
-      umidade: body.temperature
+      umidade: body.humidity,
+      temperatura: body.temperature
     }
 
     Leitura.create(leitura)
@@ -17,5 +19,14 @@ module.exports = {
         res.status(500).json(err)
       })
 
+  },
+  getAll: (req, res, next) => {
+    Leitura.findAll()
+      .then(leituras => {
+        res.json(leituras)
+      })
+      .catch(err => {
+        res.status(500).json(err)
+      })
   }
 }
