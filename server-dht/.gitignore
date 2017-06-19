@@ -1,1 +1,4 @@
 node_modules
+public/assets
+db.sqlite
+npm-debug.log
